@@ -24,6 +24,11 @@ class MainScreen extends StatelessWidget {
                 child: BottomNavigationBar(
                   showSelectedLabels: false,
                   showUnselectedLabels: false,
+                  unselectedIconTheme: const IconThemeData(color: Colors.black38),
+                  selectedIconTheme: const IconThemeData(color: kSecondary),
+                  onTap: (value) {
+                   
+                  }, 
                   items: const [
                   BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                   BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
