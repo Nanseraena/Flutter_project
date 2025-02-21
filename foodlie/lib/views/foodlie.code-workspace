@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../../../../Downloads/Foodly+Flutter+Starter+Files/Foodly Flutter Starter Files/assets"
+	}
+],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "interactive"
+  }
+}
