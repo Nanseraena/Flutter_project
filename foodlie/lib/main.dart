@@ -9,6 +9,7 @@ import 'package:get/get.dart'; // Use GetX correctly
 const kDark = Colors.black; // Define the kDark color constant
 const kOffWhite = Color(0xFFF8F8F8); // Define the kOffWhite color constant
 
+Widget home = MainScreen(); // Define the default Home widget
 void main() {
   Get.put(TabIndexController()); // Ensure TabIndexController is defined in the imported file
   Get.put(TabIndexController());
