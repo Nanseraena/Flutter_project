@@ -39,8 +39,8 @@ class MainScreen extends StatelessWidget {
               items: [
                 BottomNavigationBarItem(
                   icon: controller.tabIndex.value == 0
-                      ? const Icon(AntDesign.apple1)
-                      : const Icon(AntDesign.apple_o),
+                      ? const Icon(AntDesign.home)
+                      : const Icon(AntDesign.home),
                   label: 'Home',
                 ),
                 const BottomNavigationBarItem(
