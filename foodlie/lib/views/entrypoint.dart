@@ -11,7 +11,7 @@ import 'package:badges/badges.dart' as badges;
 
 
 class MainScreen extends StatelessWidget {
-  MainScreen({Key? key}) : super(key: key);
+  MainScreen({super.key});
   final controller = Get.put(TabIndexController());
 
   final List<Widget> pagesList = const [

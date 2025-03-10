@@ -5,7 +5,7 @@ import 'package:foodlie/constants/constants.dart';
 class CustomContainer extends StatelessWidget {
 
 
-   CustomContainer({Key? key, required this.containerContent}) : super(key: key);
+   CustomContainer({super.key, required this.containerContent});
   Widget containerContent;
 
   @override
