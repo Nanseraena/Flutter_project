@@ -23,32 +23,50 @@ class CategoryList extends StatelessWidget {
               // ignore: unused_local_variable
               var category = categories[index];
               return GestureDetector(
-                onTap: () {
-                  // Add your onTap functionality here
-                },
-                child: Container(
-                  margin: EdgeInsets.only(right: 5.w),
-                  padding: EdgeInsets.only(bottom: 4.h),
-                  width: width * 0.19,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10.r),
-                    border: Border.all(color: kSecondary, width: 0.5.w),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 35.h,
-                        child: Image.network(category['imageUrl'],
-                            fit: BoxFit.contain),
+                  onTap: () {
+                    if (controller.category == category['-id']) {
+                      controller.updateTitle = '';
+                      controller.updateCategory = '';
+                    } else if (category['value'] == 'more') {
+                      Get.to(() => AllCategories(),
+                          transition: Transition.fadeIn,
+                          duration: Duration(milliseconds: 500));
+                    } else {
+                      controller.updateTitle = category['title'];
+                      controller.updateCategory = category['-id'];
+                    }
+                    // Add your onTap functionality here
+                  },
+                  child: Obx(
+                    () => Container(
+                      margin: EdgeInsets.only(right: 5.w),
+                      padding: EdgeInsets.only(bottom: 4.h),
+                      width: width * 0.19,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                            color: controller.categoryValue == category['-id']
+                                ? kSecondary
+                                : kOffWhite,
+                            width: 0.5.w),
                       ),
-                      ReusableText(
-                          text: category['title'],
-                          style: appStyle(12, kDark, FontWeight.normal, 0))
-                    ],
-                  ),
-                ),
-              );
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 35.h,
+                            child: Image.network(category['imageUrl'],
+                                fit: BoxFit.contain),
+                          ),
+                          ReusableText(
+                              text: category['title'],
+                              style: appStyle(12, kDark, FontWeight.normal, 0))
+                        ],
+                      ),
+                    ),
+                  ));
             })));
   }
 }
+
+class AllCategories {}
