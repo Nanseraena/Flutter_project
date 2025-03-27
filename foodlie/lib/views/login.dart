@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     // Top Curved Container
                     _buildTopSection(constraints),
-                    
+
                     // Login Form
                     _buildLoginForm(constraints),
                   ],
@@ -134,9 +134,9 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Password TextField
               TextFormField(
                 controller: _passwordController,
@@ -146,9 +146,9 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: const Icon(Icons.lock_outline),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _obscurePassword 
-                        ? Icons.visibility_off 
-                        : Icons.visibility,
+                      _obscurePassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
                     ),
                     onPressed: () {
                       setState(() {
@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              
+
               // Forgot Password
               Align(
                 alignment: Alignment.centerRight,
@@ -184,9 +184,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Login Button
               ElevatedButton(
                 onPressed: _login,
@@ -205,9 +205,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Social Login or Signup
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -216,7 +216,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context, 
+                        context,
                         MaterialPageRoute(builder: (context) => SignUpPage()),
                       );
                     },
@@ -224,7 +224,8 @@ class _LoginPageState extends State<LoginPage> {
                       cursor: SystemMouseCursors.click,
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(8),
